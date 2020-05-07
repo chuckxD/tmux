@@ -1,6 +1,6 @@
 # Introduction to tmux
 
-Tmux is a **terminal multiplexer**. Using tmux we can create, access and control terminals from a single terminal. Tmux sessions can be detached, and continue running in the background, then we can reattach. This is extremely helpful and it is one of the coolest features of tmux. To get up and running with tmux, you need to learn some tmux commands.
+Tmux is a **terminal multiplexer**. Using tmux we can create, access and control terminals from a single terminal. Tmux sessions can be detached, continue running in the background, and then reattached. This is extremely helpful and it is one of the coolest features of tmux. To get up and running with tmux, you need to learn some tmux commands.
 
 ## Installation
 
@@ -9,8 +9,8 @@ Tmux is a **terminal multiplexer**. Using tmux we can create, access and control
 Every major distribution has tmux in their repositories, so you google them up. Below I listed the install commands for arch based and ubuntu distribution.
 
 ```sh
-pacman sudo -Su tmux
-``` 
+sudo pacman -Su tmux
+```
 
 ```sh
 sudo apt-get install tmux
@@ -25,21 +25,21 @@ brew install tmux
 
 To start tmux, enter *tmux* in your terminal.
 
-When tmux is started, it creates a single session with a single window in it. At the bottom, the status bar displays the information about the current session. If you don't like the look of tmux and want to customize the information displayed on the status bar, we can do that using a tmux config file, which we will see later in this series. Now, get out of tmux, by typing *exit*.
+When tmux is started, it creates a single session with a single window in it. At the bottom, the status bar displays the information about the current session. If you don't like the look of tmux and want to customize the information displayed on the status bar, you can do that using a tmux config file, which we will see later in this series. Now, get out of tmux by typing *exit*.
 
 ## Sessions, Attach and Detach
 
-To create a new tmux session, enter *tmux new -s text-editor* in your terminal. This will create a session named *text-editor*. In a session, you can create multiple windows. An window can have multiple panes. To acheive this, you need to know about the prefix key.
+To create a new tmux session, enter *tmux new -s text-editor* in your terminal. This will create a session named *text-editor*. In a session, you can create multiple windows. A window can have multiple panes. To achieve this, you need to know about the prefix key.
 
 The default prefix key is *ctrl+ b*, that is you should press the *ctrl* and *b* keys simultaneously. Hereafter, I will refer the *ctrl+b* combination  as *prefix*, so keep in mind.
 
 ### New Window
 
-To create a new window in your current session, type *prefix c*, while will create a new window and the focus will be on the newly created window. To navigate between the windows, use *prefix p* aka previous window and *prefix n* aka next window. Also, you can navigate through windows by using *prefix [num]* where *num* is the number associated with each window.
+To create a new window in your current session, type *prefix c*, this will create a new window and the focus will be on the newly created window. To navigate between the windows, use *prefix p* aka previous window and *prefix n* aka next window. Also, you can navigate through windows by using *prefix [num]* where *num* is the number associated with each window.
 
 ### Panes
 
-As I mentioned earlier, a single window can contain multiple panes. To create a vertical pane type *prefix %* (prefix key is *ctrl+b*). This will create a verical pane on the left side and the focus will be on the newly created window. To create a horizontal pane, type *prefix "*. If you find the key combination  hard to remember and type, later in this series, you will learn how to change the default keybindings.
+As I mentioned earlier, a single window can contain multiple panes. To create a vertical pane type *prefix %* (prefix key is *ctrl+b*). This will create a verical pane on the right side and the focus will be on the newly created window. To create a horizontal pane, type *prefix "*. If you find the key combination  hard to remember and type, later in this series, you will learn how to change the default keybindings.
 
 ### Attach and Detach
 
@@ -53,7 +53,7 @@ As of now, you know how to create a new session, detach from a session, attach t
 
 ```sh
 touch ~/.tmux.conf
-```    
+```
 
 #### Prefix key
 
